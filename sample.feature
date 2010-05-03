@@ -14,11 +14,12 @@ Feature: proof of concept
                     this the second line of the desctiption
     Given I have a <var1> and some "string"
     And the following table and some 'string'
-      | header 1  | header 2  | # here is a comment after a table
-      | cell 1-1  | cell 1-2  |
+      | header 1  | header 2  | # here is a comment after a step table header
+      | cell 1-1  | cell 1-2  | # here is a comment after a step table row
       | cell 2-1  | "cell 2-2"|
 
     When I do <var2>
+    And use apostrophes then the feature's syntax still looks good
     And here is a string with single and double quotes- "i'll be back" 
     And here is a string with the opposite 'the quote is "Foo"'
     And what about a var in a quote like so: "<var2>"
@@ -35,7 +36,7 @@ Feature: proof of concept
 
   Examples:
     | var1  |  var2  | # i am a comment
-    | foo   |  bar   |
+    | foo   |  bar   | # so am i
     | dog   |  food  |
 
   Scenarios: some other examples with a description
