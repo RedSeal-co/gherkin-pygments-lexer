@@ -1,0 +1,14 @@
+/* 
+Gherkin on Black stylesheet for Pygments
+Based on colours from http://colorschemedesigner.com/#2P32mw0w0w0w0
+
+(C) Aslak Hellesøy
+*/
+
+.highlight { background: #000000; color: #67E667; } /* STEP NAME (DEFAULT TEXT) */
+.highlight .c  { color: #9F3ED5 }   /* Comment          (# Comments)                            (dark violet)   */ 
+.highlight .nn { color: #AD66D5 }   /* Name.Namespace   (Tags)                                  (bright violet) */
+.highlight .k  { color: #269926 }   /* Keyword          (Feature, Scenario, Given, | etc)       (light green)   */ 
+.highlight .nb { color: #67E667 }   /* Name.Builtin     (Names)                                 (dark green)    */
+.highlight .s  { color: #FFD073 }   /* Literal.String   (String, PyString and numeric values)   (light orange)  */ 
+.highlight .nv { color: #FFAA00 }   /* Name.Variable    (Scenario Outline variables)            (orange)        */
