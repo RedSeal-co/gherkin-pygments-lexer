@@ -23,7 +23,7 @@ class GherkinLexer(RegexLexer):
             (r'#.*$', Comment),
           ],
         'multiline_descriptions' : [
-            (step_keywords, Keyword, "step_content_stack"),
+            (step_keywords, Keyword, "step_content_stack"), # There must be a better way of doing this...
             include('comments'),
             (r"(\s|.)", Name.Constant),
           ],

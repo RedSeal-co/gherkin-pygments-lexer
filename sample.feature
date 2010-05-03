@@ -1,4 +1,4 @@
-@foo34 @bar # some comment
+@foo34 @bar
 Feature: proof of concept
 
   In order to read Cucumber features faster and eaiser on Github 
@@ -15,15 +15,16 @@ Feature: proof of concept
     Given I am the first step after a multiline-description I should properly display foo@bar.com
     And I have a <var1> and some "string"
     And the following table and some 'string'
-      | header 1    | header 2  | # here is a comment after a step table header
-      | cell 1-1    | cell 1-2  | # here is a comment after a step table row
+      | header 1    | header 2  |
+      | cell 1-1    | cell 1-2  |
       | cell 2-1    | "cell 2-2"|
       | <var1>      | <var2>    |
       | foo@bar.com | stuff     |
 
     When I do <var2>
     And use apostrophes then the feature's syntax still looks good
-    And here is a string with single and double quotes- "i'll be back" 
+    And here is a string with single and double quotes- "i'll be back"
+    # Given I comment something out
     And here is a string with the opposite 'the quote is "Foo"'
     And what about a var in a quote like so: "<var2>"
     And what about a multiline string with a var in it like so:
@@ -39,12 +40,12 @@ Feature: proof of concept
     And email addresses like foo@bar.com and "bar@foo.com" should not be highlighted like tags
 
   Examples:
-    | var1  |  var2  | # i am a comment
-    | foo   |  bar   | # so am i
+    | var1  |  var2  |
+    | foo   |  bar   |
     | dog   |  food  |
 
   Scenarios: some other examples with a description
-             and guess waht?!? I can have multilines as well!  # look at me, I'm a comment
+             and guess waht?!? I can have multilines as well!
              Who would have thunk?
     | var1  |  var2  |
     | foo   |  bar   |
@@ -53,7 +54,7 @@ Feature: proof of concept
   @some_tag @another_tag
   Scenario: more examples
             will follow after this multi-line description
-    Given some context# this is an inline comment
+    Given some context
     # This is a comment
 # So is this with no space at front...
 
@@ -71,6 +72,7 @@ Funktionalität: Addition
   Beispiele:
     | Eingabe_1 | Eingabe_2 | Knopf | Ausgabe |
     | 20        | 30        | add   | 50      |
+    # A comment in the middle of the table is ok
     | 2         | 5         | add   | 7       |
     | 0         | 40        | add   | 40      |
 
