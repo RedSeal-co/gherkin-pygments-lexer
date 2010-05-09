@@ -3,7 +3,7 @@ Feature: proof of concept
 
   In order to read Cucumber features faster and eaiser on Github 
   As a Cucumber user
-  I want to have syntax highlighting for Gherkin
+  I want to have syntax highlighting for Gherkin without 555 highlighted in the header
   This is part of the narrative, even if I have the # symbol, it is still the narrative- not a comment
 
   Background: this is multi-line description

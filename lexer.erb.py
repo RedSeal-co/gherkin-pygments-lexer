@@ -22,12 +22,12 @@ class GherkinLexer(RegexLexer):
         'comments': [
             (r'#.*$', Comment),
           ],
-        'multiline_descriptions' : [
-            (step_keywords, Keyword, "step_content_stack"), # There must be a better way of doing this...
+        'feature_elements' : [
+            (step_keywords, Keyword, "step_content_stack"),
             include('comments'),
             (r"(\s|.)", Name.Function),
           ],
-        'multiline_descriptions_on_stack' : [
+        'feature_elements_on_stack' : [
             (step_keywords, Keyword, "#pop:2"),
             include('comments'),
             (r"(\s|.)", Name.Function),
@@ -44,14 +44,17 @@ class GherkinLexer(RegexLexer):
             (r"[^\|]", Name.Variable),
           ],
         'scenario_sections_on_stack': [
-            (feature_element_keywords, bygroups(Name.Function, Keyword, Keyword, Name.Function), "multiline_descriptions_on_stack"),
+            (feature_element_keywords, bygroups(Name.Function, Keyword, Keyword, Name.Function), "feature_elements_on_stack"),
           ],
         'narrative': [
             include('scenario_sections_on_stack'),
             (r"(\s|.)", Name.Function),
           ],
         'table_vars': [
-            (r'(<[^>]*>)', bygroups(Name.Variable)),
+            (r'(<[^>]*>)', Name.Variable),
+          ],
+        'numbers': [
+            (r'(\d+\.?\d*|\d*\.\d+)([eE][+-]?[0-9]+)?', String),
           ],
         'string': [
             include('table_vars'),
@@ -72,6 +75,7 @@ class GherkinLexer(RegexLexer):
           'step_content':[
             (r'"', Name.Function, "double_string"),
             include('table_vars'),
+            include('numbers'),
             include('comments'),
             (r'(\s|.)', Name.Function),
           ],
@@ -95,7 +99,7 @@ class GherkinLexer(RegexLexer):
             (r'(\s*)(@[^@\r\n\t ]+)', bygroups(Name.Function, Name.Tag)),
             (step_keywords, bygroups(Name.Function, Keyword), "step_content_root"),
             (feature_keywords, bygroups(Keyword, Keyword, Name.Function), 'narrative'),
-            (feature_element_keywords, bygroups(Name.Function, Keyword, Keyword, Name.Function), "multiline_descriptions"),
+            (feature_element_keywords, bygroups(Name.Function, Keyword, Keyword, Name.Function), "feature_elements"),
             (examples_keywords, bygroups(Name.Function, Keyword, Keyword, Name.Function), "examples_table"),
             (r'(\s|.)', Name.Function),
         ]
