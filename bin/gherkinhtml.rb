@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
-def pygmentize(file, destination=nil)
-  destination ||= "#{File.basename(file,".feature")}.html"
+def pygmentize(file, destination, theme)
+  puts "FILE:#{file}"
+  puts "DEST:#{destination}"
   pygmentized = `pygmentize -f html -O encoding=utf-8 #{file}`
   File.open(destination, "wb") do |io|
     io.write(<<-EOF)
@@ -12,7 +13,7 @@ def pygmentize(file, destination=nil)
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <style>
-#{IO.read(File.dirname(__FILE__) + '/../gherkin.css')}
+#{IO.read(File.dirname(__FILE__) + "/../gherkin-#{theme}-pygments.css")}
   </style>
   <body>
 EOF

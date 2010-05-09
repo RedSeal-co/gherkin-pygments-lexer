@@ -36,10 +36,13 @@ task :eyeball_sample => :install do
   sh "pygmentize sample.feature"
 end
 
-desc "Manually Eyeball the sample.feature in HTML"
-task :eyeball_sample_html => :install do
-  sh "#{File.dirname(__FILE__)}/bin/gherkinhtml.rb sample.feature"
-  Launchy::Browser.run("#{File.dirname(__FILE__)}/sample.html")
+%w{white black}.each do |theme|
+  desc "Manually Eyeball the sample.feature in HTML (#{theme})"
+  task "eyeball_sample_#{theme}_html".to_sym => :install do
+    html = "#{File.dirname(__FILE__)}/sample_#{theme}.html"
+    sh "#{File.dirname(__FILE__)}/bin/gherkinhtml.rb sample.feature #{html} #{theme}"
+    Launchy::Browser.run(html)
+  end
 end
 
 task :default => :eyeball_sample

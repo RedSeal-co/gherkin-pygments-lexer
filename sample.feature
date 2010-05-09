@@ -23,7 +23,7 @@ Feature: proof of concept
 
     When I do <var2>
     And use apostrophes then the feature's syntax still looks good
-    And here is a string with single and double quotes- "i'll be back"
+    And here is a string with number 43 and double quotes- "i'll be back"
     # Given I comment something out
     And here is a string with the opposite 'the quote is "Foo"'
     And what about a var in a quote like so: "<var2>"
