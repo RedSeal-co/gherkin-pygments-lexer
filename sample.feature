@@ -11,8 +11,8 @@ Feature: proof of concept
     Given cheese is good
 
   Scenario Outline: this is a test 
-                    this the second line of the description
-    Given I am the first step after a multiline-description I should properly display foo@bar.com
+                    this the 2nd line of the description
+    Given I am the first step multiline-description I should properly display foo@bar.com 222
     And I have a <var1> and some "string"
     And the following table and some 'string'
       | header 1    | header 2  |
@@ -54,9 +54,10 @@ Feature: proof of concept
   @some_tag @another_tag
   Scenario: more examples
             will follow after this multi-line description
-    Given some context
+    Given some context 333
     # This is a comment
 # So is this with no space at front...
+    And some more some context <shouldnotbehilit>
 
 Funktionalität: Addition
   Um dumme Fehler zu vermeiden
@@ -92,3 +93,15 @@ Feature: Addition
     | 20      | 30      | add    | 50     |
     | 2       | 5       | add    | 7      |
     | 0       | 40      | add    | 40     |
+
+Egenskap: Summering
+  For å slippe å gjøre dumme feil
+  Som en regnskapsfører
+  Vil jeg kunne legge sammen
+
+  Scenario: to tall
+    Gitt at jeg har tastet inn 5
+    Og at jeg har tastet inn 7
+    Når jeg summerer
+    Så skal resultatet være 12
+

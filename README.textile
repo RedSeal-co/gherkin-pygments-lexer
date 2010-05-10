@@ -7,6 +7,13 @@ h2. Installing
 The lexer is part of the Pygments codebase. Pygments gets updated when there are major changes in this repo,
 for example when a new translation is added to Gherkin.
 
+Cheat sheet for Aslak:
+
+  hg clone https://aslakhellesoy@bitbucket.org/aslakhellesoy/pygments-main
+  cd pygments-main
+  hg pull https://aslakhellesoy@bitbucket.org/birkenfeld/pygments-main
+  hg update
+
 h2. Making Pretty Cucumber features
 
 pygmentize foo.feature
@@ -14,13 +21,3 @@ pygmentize foo.feature
 h2. Hacking
 
 Edit lexer.erb.py, then run rake
-
-h2. TOTO
-
-* Recognise Numbers
-* OK Triple-quotes and should be keywords
-* Table bars should be keywords
-* OK Single-quotes should have same colour as step name (not keyword - too many colours)
-* Cell values should be light orange
-** Except Scenario Outline header cells: Dark orange
-* All keywords should have same class

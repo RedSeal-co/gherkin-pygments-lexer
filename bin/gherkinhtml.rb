@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 
 def pygmentize(file, destination, theme)
-  puts "FILE:#{file}"
-  puts "DEST:#{destination}"
   pygmentized = `pygmentize -f html -O encoding=utf-8 #{file}`
   File.open(destination, "wb") do |io|
     io.write(<<-EOF)
