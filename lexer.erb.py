@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from pygments.lexer import RegexLexer, bygroups, include
 from pygments.token import \
-     Comment, Literal, Operator, Keyword, Name, String
+     Comment, Operator, Keyword, Name, String
 
 class GherkinLexer(RegexLexer):
     """
