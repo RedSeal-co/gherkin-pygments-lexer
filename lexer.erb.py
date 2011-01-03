@@ -54,7 +54,7 @@ class GherkinLexer(RegexLexer):
             (r'(<[^>]+>)', Name.Variable),
           ],
         'numbers': [
-            (r'(\d+\.?\d*|\d*\.\d+)([eE][+-]?[0-9]+)?', String),
+            (r'([+-]?\d+\.?\d*|\d*\.\d+)([eE][+-]?[0-9]+)?', String),
           ],
         'string': [
             include('table_vars'),

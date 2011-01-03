@@ -12,7 +12,7 @@ Feature: proof of concept
 
   Scenario Outline: this is a test 
                     this the 2nd line of the description
-    Given I am the first step multiline-description I should properly display foo@bar.com 222
+    Given I am the first step multiline-description I should properly display 2E3 -10 foo@bar.com 222
     And I have a <var1> and some "string"
     And the following table and some 'string'
       | header 1    | header 2  |
